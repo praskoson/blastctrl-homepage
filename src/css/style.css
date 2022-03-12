@@ -366,7 +366,7 @@ img {
 
 .icons i {
   color: #fff;
-  background: var(--primary-color);
+  background: var(--icon-primary);
   border-radius: 50%;
   padding: 1rem;
   margin-right: 50px;
@@ -382,7 +382,7 @@ img {
 }
 
 .column .icons .object h4 {
-  color: var(--primary-color);
+  color: var(--icon-text);
   font-weight: 500;
   font-size: 1.3rem;
   text-transform: capitalize;
@@ -412,6 +412,14 @@ img {
   width: 100%;
   border: #ccc 1px solid;
   font-family: Roboto, sans-serif;
+}
+
+.callback-form input[name="name"],
+.callback-form input[type="email"],
+.callback-form input[name="company"],
+.callback-form textarea {
+  color: var(--font-primary-color);
+  background-color: var(--background-color);
 }
 
 .callback-form input {
