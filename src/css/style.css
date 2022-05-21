@@ -667,6 +667,10 @@ p.privacy {
   #portfolio .projects-grid .project {
     max-width: 200px;
   }
+
+  #portfolio .projects-grid .project img {
+    filter: grayscale(0);
+  } 
 }
 
 @media screen and (max-width: 400px) {
