@@ -19,7 +19,7 @@ hamburger.addEventListener('click', () => responsive());
 
 const inputs = [nameInput, emailInput, messageInput];
 
-const isValidEmail = email => {
+const isValidEmail = (email) => {
   const re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
@@ -28,7 +28,7 @@ const isValidEmail = email => {
 let isFormValid = false;
 let isValidationOn = false;
 
-const resetInput = element => {
+const resetInput = (element) => {
   element.classList.remove('invalid');
   element.nextElementSibling.classList.add('hidden');
 };
@@ -39,7 +39,7 @@ const validateInputs = () => {
   }
 
   isFormValid = true;
-  inputs.forEach(i => resetInput(i));
+  inputs.forEach((i) => resetInput(i));
 
   if (!nameInput.value) {
     isFormValid = false;
@@ -60,13 +60,13 @@ const validateInputs = () => {
   }
 };
 
-inputs.forEach(i => {
+inputs.forEach((i) => {
   i.addEventListener('input', () => {
     validateInputs();
   });
 });
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   grecaptcha.ready(function () {
     grecaptcha
@@ -89,7 +89,7 @@ form.addEventListener('submit', e => {
   });
 });
 
-const submitToApi = data => {
+const submitToApi = (data) => {
   const url =
     'https://bck62jcx3i.execute-api.eu-central-1.amazonaws.com/contact';
   const headers = new Headers();
@@ -104,18 +104,18 @@ const submitToApi = data => {
   };
 
   fetch(url, requestOptions)
-    .then(response => {
+    .then((response) => {
       if (response.ok) return response.json();
       else throw new Error(response.status + ' ' + response.statusText);
     })
-    .then(result => {
+    .then((result) => {
       form.classList.add('hidden');
       thankyou.classList.remove('hidden');
       thankyou.classList.add('appear');
       submitError.classList.add('removed');
       privacy.classList.add('hidden');
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(error);
       submitError.classList.remove('removed');
     });
@@ -127,6 +127,6 @@ const styles = `
   }
 `;
 
-var styleSheet = document.createElement("style");
+var styleSheet = document.createElement('style');
 styleSheet.innerText = styles;
 document.body.appendChild(styleSheet);

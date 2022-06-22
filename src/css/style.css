@@ -105,12 +105,12 @@ img {
 }
 
 #banner .banner-container > a {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
 #banner .card {
-  box-shadow: 5px 10px 60px rgba(0,0,0,0.65);
+  box-shadow: 5px 10px 60px rgba(0, 0, 0, 0.65);
   padding: 3.5rem 3.5rem 2rem;
   max-width: 460px;
   flex: 1;
@@ -160,7 +160,7 @@ img {
   font-size: 2.2rem;
   line-height: 1.22em;
   /* margin-top: 30px; */
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 #banner .banner-container .tagline .btn {
@@ -178,13 +178,12 @@ img {
 }
 
 #banner .social > a > i {
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 #banner .social > a > i:hover {
   transform: scale(1.05);
 }
-
 
 /* About Us */
 #about .grid-container {
@@ -198,37 +197,37 @@ img {
 #about .card {
   background-image: linear-gradient(var(--card-bg-1), var(--card-bg-2));
   text-align: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 0;
   display: flex;
   flex: 0 0 33.3333%;
   flex-direction: column;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.12);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
   margin: 1rem;
   min-width: 160px;
   max-width: 320px;
-  transition: box-shadow .25s ease;
+  transition: box-shadow 0.25s ease;
 }
 
 #about .card:hover,
 #about .card:focus,
 #about .card:active {
-  box-shadow: 0px 5px 10px rgba(0,0,0,0.25);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 #about .card .header {
-  padding: 3rem 3rem .5rem;
+  padding: 3rem 3rem 0.5rem;
 }
 
 #about .card .meta {
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   flex: 1;
 }
 
 #about .card .meta h4 {
   font-weight: 500;
   font-size: 1.3rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #about .card .meta p {
@@ -248,7 +247,7 @@ img {
 
 #portfolio .projects-grid .project {
   position: relative;
-  padding: .5rem;
+  padding: 0.5rem;
   max-width: 460px;
 }
 
@@ -258,10 +257,9 @@ img {
   /* aspect-ratio: 1 / 1; */
   object-fit: cover;
   object-position: center;
-  transition: filter .25s ease;
+  transition: filter 0.25s ease;
   filter: grayscale(1);
 }
-
 
 #portfolio .project:hover img,
 #portfolio .project:focus img,
@@ -410,7 +408,6 @@ img {
   width: 100%;
 }
 
-
 .callback-form label {
   display: block;
   /* margin-bottom: 5px; */
@@ -427,9 +424,9 @@ img {
   font-family: Roboto, sans-serif;
 }
 
-.callback-form input[name="name"],
-.callback-form input[type="email"],
-.callback-form input[name="company"],
+.callback-form input[name='name'],
+.callback-form input[type='email'],
+.callback-form input[name='company'],
 .callback-form textarea {
   color: var(--font-primary-color);
   background-color: var(--background-color);
@@ -440,7 +437,7 @@ img {
   height: 40px;
 }
 
-.callback-form input[type="submit"] {
+.callback-form input[type='submit'] {
   border: none;
 }
 
@@ -503,7 +500,7 @@ img {
 p.privacy {
   margin: 0;
   margin-top: 10px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: #777;
 }
 
@@ -519,7 +516,7 @@ p.privacy {
   display: none;
 }
 
-.grecaptcha-badge { 
+.grecaptcha-badge {
   visibility: hidden;
 }
 
@@ -579,7 +576,7 @@ p.privacy {
 
   .flex-columns .column-1,
   .flex-columns .column-2 {
-    padding: 30px ;
+    padding: 30px;
   }
 
   .container {
@@ -639,7 +636,7 @@ p.privacy {
   }
 
   #team .team-container .member .meta {
-    padding: .5rem .5rem;
+    padding: 0.5rem 0.5rem;
   }
 
   /* Contact */
@@ -669,7 +666,7 @@ p.privacy {
 
   #portfolio .projects-grid .project img {
     filter: grayscale(0);
-  } 
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -691,6 +688,6 @@ p.privacy {
 
   #team .team-container {
     padding: 0;
-    margin: .5rem;
+    margin: 0.5rem;
   }
 }
