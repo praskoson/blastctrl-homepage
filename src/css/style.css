@@ -275,7 +275,6 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 2rem;
   padding: 0 1rem 1rem;
-  justify-items: center;
 }
 
 #team .team-container .member {
