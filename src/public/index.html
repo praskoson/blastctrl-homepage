@@ -524,12 +524,12 @@
                     <div style="text-align: center; margin-bottom: 10px">Send us an email:</div>
                     <div class="form-control">
                       <label for="name"></label>
-                      <input type="text" name="name" placeholder="Your name" />
+                      <input id="name" type="text" name="name" placeholder="Your name" />
                       <small class="input-error hidden">Enter your name</small>
                     </div>
                     <div class="form-control">
                       <label for="email"></label>
-                      <input type="email" name="email" placeholder="Email" />
+                      <input id="email" type="email" name="email" placeholder="Email" />
                       <small class="input-error hidden">Enter your valid email</small>
                     </div>
                     <input
@@ -539,13 +539,14 @@
                       tabindex="-1"
                       autocomplete="off" />
                     <div class="form-control">
-                      <label for="name"></label>
-                      <input type="text" name="company" placeholder="Company name" />
+                      <label for="company"></label>
+                      <input id="company" type="text" name="company" placeholder="Company name" />
                     </div>
                     <small class="input-error hidden">Enter your company name</small>
                     <div class="form-control">
                       <label for="message"></label>
                       <textarea
+                        id="message"
                         name="message"
                         placeholder="Your message"
                         rows="3"
