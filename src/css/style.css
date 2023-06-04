@@ -124,7 +124,7 @@ img {
 
 #banner .banner-container .card h1 {
   display: block;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   text-align: center;
   font-size: 3.5vw;
@@ -155,7 +155,7 @@ img {
 }
 
 #banner .banner-container .tagline p {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 200;
   font-size: 2.2rem;
   line-height: 1.22em;
@@ -267,7 +267,7 @@ img {
   width: clamp(150px, 100%, 200px);
 }
 
-#portfolio .projects-grid .rounded img  {
+#portfolio .projects-grid .rounded img {
   border-radius: 50%;
 }
 
@@ -435,9 +435,9 @@ img {
   font-family: Roboto, sans-serif;
 }
 
-.callback-form input[name='name'],
-.callback-form input[type='email'],
-.callback-form input[name='company'],
+.callback-form input[name="name"],
+.callback-form input[type="email"],
+.callback-form input[name="company"],
 .callback-form textarea {
   color: var(--font-primary-color);
   background-color: var(--background-color);
@@ -448,7 +448,7 @@ img {
   height: 40px;
 }
 
-.callback-form input[type='submit'] {
+.callback-form input[type="submit"] {
   border: none;
 }
 
