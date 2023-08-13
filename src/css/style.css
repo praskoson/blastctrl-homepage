@@ -372,7 +372,6 @@ img {
   transition: opacity 400ms;
   grid-column: 1 / span 3;
 }
-
 #team .team-container .member:hover .meta {
   bottom: 0;
 }
@@ -390,7 +389,7 @@ img {
 }
 
 .member .meta p.text-primary {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Callback form */
