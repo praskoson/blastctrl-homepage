@@ -61,7 +61,7 @@ inView(scrollWrapper, () => {
   };
 });
 
-let isMobile = window.matchMedia("(any-pointer:coarse)").matches;
+let isMobile = window.matchMedia("(any-pointer:coarse) and (max-width: 480px)").matches;
 
 if (isMobile) {
   // let start = { x: 0, y: 0 };
