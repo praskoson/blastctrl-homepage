@@ -97,7 +97,6 @@ if (isMobile) {
   });
 
   marquee1.addEventListener("wheel", (e) => {
-    control1.currentTime += e.deltaX / 100;
     control1.currentTime = Math.max(control1.currentTime + e.deltaX / 100, duration);
   });
   marquee2.addEventListener("wheel", (e) => {
