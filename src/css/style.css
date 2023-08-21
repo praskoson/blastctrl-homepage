@@ -760,6 +760,7 @@ p.privacy {
   .scroll-item {
     width: 140px;
     filter: grayscale(1);
+    transition: filter 200ms ease-in-out;
   }
   .scroll-item:hover,
   .scroll-item:focus,
