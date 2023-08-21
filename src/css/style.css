@@ -239,73 +239,6 @@ svg {
   font-weight: 300;
 }
 
-/* Portfolio */
-#portfolio .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  padding-bottom: 1rem;
-  align-items: center;
-}
-
-#portfolio .projects-grid .project {
-  display: inline-block;
-  position: relative;
-  padding: 0.5rem;
-  max-width: 460px;
-  overflow: hidden;
-}
-
-#portfolio .projects-grid img {
-  width: 100%;
-  height: 100%;
-  /* aspect-ratio: 1 / 1; */
-  object-fit: cover;
-  object-position: center;
-  transition: filter 0.25s ease;
-  filter: grayscale(1);
-}
-
-#portfolio .projects-grid .openmeme {
-  width: clamp(150px, 100%, 200px);
-}
-
-#portfolio .projects-grid #monkedao {
-  background: #184623;
-  padding: 1rem;
-  object-fit: contain;
-  aspect-ratio: 1 / 1;
-}
-
-#portfolio .projects-grid .rounded img {
-  border-radius: 9999px;
-}
-
-#portfolio .projects-grid .project#saturn {
-  .img-container {
-    background: black;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 9999px;
-    display: grid;
-    place-content: center;
-
-    & img {
-      display: block;
-      max-width: 100%;
-      padding: 0rem;
-      width: 6rem;
-      height: auto;
-    }
-  }
-}
-
-#portfolio .project:hover img,
-#portfolio .project:focus img,
-#portfolio .project:active img {
-  filter: grayscale(0);
-}
-
 /* Team Members */
 #team .team-container {
   display: grid;
@@ -689,10 +622,6 @@ p.privacy {
     margin-right: 30px;
   }
 
-  #portfolio .projects-grid {
-    padding: 0 2rem;
-  }
-
   .callback-form textarea {
     height: 150px;
   }
@@ -704,16 +633,6 @@ p.privacy {
   }
 }
 
-@media screen and (max-width: 426px) {
-  #portfolio .projects-grid .project {
-    max-width: 200px;
-  }
-
-  #portfolio .projects-grid .project img {
-    filter: grayscale(0);
-  }
-}
-
 @media screen and (max-width: 400px) {
   .member .socials i {
     font-size: 1.4em;
@@ -721,16 +640,6 @@ p.privacy {
 }
 
 @media screen and (max-width: 360px) {
-  #portfolio .projects-grid {
-    row-gap: 5px;
-    column-gap: 2rem;
-  }
-
-  #portfolio .projects-grid {
-    padding: 0;
-    margin: 0 2rem;
-  }
-
   #team .team-container {
     padding: 0;
     margin: 0.5rem;
@@ -854,7 +763,9 @@ p.privacy {
     width: 140px;
     filter: grayscale(1);
   }
-  .scroll-item:hover {
+  .scroll-item:hover,
+  .scroll-item:focus,
+  .scroll-item:active {
     filter: grayscale(0);
   }
 }
