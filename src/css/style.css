@@ -664,6 +664,7 @@ p.privacy {
   position: relative;
   overflow-x: hidden;
   overscroll-behavior-x: none;
+  column-gap: 2rem;
   width: 100%;
 }
 
@@ -747,17 +748,14 @@ p.privacy {
   scale: 2.4;
 }
 
-.scroll-item:first-child {
-  margin-left: 2rem;
-}
-.scroll-item:last-child {
-  margin-right: 2rem;
-}
-
 @media (min-width: 475px) {
   .scroll-container {
     column-gap: 4rem;
     height: 200px;
+  }
+  .marquee-1,
+  .marquee-2 {
+    column-gap: 4rem;
   }
   .scroll-item {
     width: 140px;
