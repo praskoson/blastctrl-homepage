@@ -1,5 +1,16 @@
 import { animate, inView } from "motion";
 
+function debounce(cb, delay = 250) {
+  let timeout;
+
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      cb(...args);
+    }, delay);
+  };
+}
+
 /**
  * @type {import("motion").AnimationControls}
  */
@@ -63,23 +74,25 @@ inView(scrollWrapper, () => {
 
 let isMobile = window.matchMedia("(any-pointer:coarse) and (max-width: 480px)").matches;
 
+let startStoppingFn = debounce(() => {
+  console.log("restart");
+  slowStart(control1);
+}, 2000);
+
+let startX = 0;
 if (isMobile) {
-  // let start = { x: 0, y: 0 };
-  // function touchStart(event) {
-  //   control2.pause();
-  //   start.x = event.touches[0].pageX;
-  //   start.y = event.touches[0].pageY;
-  // }
-  // function touchMove(event) {
-  //   event.preventDefault();
-  //   let x = start.x - event.touches[0].pageX;
-  //   if (control2.currentTime) control2.currentTime = (control2.currentTime - x / 2000) % duration;
-  // }
-  // marquee2.addEventListener("touchstart", touchStart, false);
-  // marquee2.addEventListener("touchmove", touchMove, false);
-  // marquee2.addEventListener("touchend", () => {
-  //   setTimeout(() => slowStart(control2), 2000);
-  // });
+  function touchStart(event) {
+    slowStop(control1);
+    startX = event.touches[0].pageX;
+  }
+  function touchMove(event) {
+    let x = startX - event.touches[0].pageX;
+    console.log(x.toFixed(2));
+    control1.currentTime = boundedAdd(control1.currentTime, Math.round(x) / 8000, duration);
+  }
+  marquee1.addEventListener("touchstart", touchStart, false);
+  marquee1.addEventListener("touchmove", touchMove, false);
+  marquee1.addEventListener("touchend", startStoppingFn);
 } else {
   marquee1.addEventListener("mouseenter", () => {
     slowStop(control1);
