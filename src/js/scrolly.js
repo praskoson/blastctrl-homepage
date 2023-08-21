@@ -1,19 +1,5 @@
 import { animate, inView } from "motion";
 
-function throttle(cb, delay = 250) {
-  let shouldWait = false;
-
-  return (...args) => {
-    if (shouldWait) return;
-
-    cb(...args);
-    shouldWait = true;
-    setTimeout(() => {
-      shouldWait = false;
-    }, delay);
-  };
-}
-
 /**
  * @type {import("motion").AnimationControls}
  */
@@ -42,7 +28,19 @@ function slowStart(controls, duration = 0.8) {
     { duration }
   );
 }
+
 const duration = 25;
+
+function boundedAdd(n1, n2, max) {
+  const result = n1 + n2;
+  if (result > max) {
+    return result % max;
+  } else if (result < 0) {
+    return result + max;
+  } else {
+    return result;
+  }
+}
 
 inView(scrollWrapper, () => {
   control1 = animate(
@@ -97,9 +95,9 @@ if (isMobile) {
   });
 
   marquee1.addEventListener("wheel", (e) => {
-    control1.currentTime = Math.max(control1.currentTime + e.deltaX / 100, duration);
+    control1.currentTime = boundedAdd(control1.currentTime, e.deltaX / 100, duration);
   });
   marquee2.addEventListener("wheel", (e) => {
-    control2.currentTime = Math.max(control2.currentTime - e.deltaX / 100, duration);
+    control2.currentTime = boundedAdd(control2.currentTime, -e.deltaX / 100, duration);
   });
 }
