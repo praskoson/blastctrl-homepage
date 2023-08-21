@@ -39,8 +39,10 @@ p {
   margin: 0.5rem 0;
 }
 
-img {
+img,
+svg {
   width: 100%;
+  block-size: auto;
 }
 
 /* Navbar */
@@ -732,5 +734,136 @@ p.privacy {
   #team .team-container {
     padding: 0;
     margin: 0.5rem;
+  }
+}
+
+#portfolio h2 {
+  font-size: 40px;
+}
+
+.scroll-wrapper {
+  padding-block: 4rem;
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.marquee-1,
+.marquee-2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  width: 100%;
+}
+
+.marquee-1::before,
+.marquee-2::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  inset-block: 0;
+  z-index: 10;
+  width: 0.5rem;
+  background-image: linear-gradient(to right, var(--secondary-color), transparent);
+}
+
+.marquee-1::after,
+.marquee-2::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  inset-block: 0;
+  z-index: 10;
+  width: 0.5rem;
+  background-image: linear-gradient(to left, var(--secondary-color), transparent);
+}
+
+.scroll-container {
+  display: flex;
+  flex: 0 0 100%;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 2rem;
+  height: 140px;
+}
+
+.scroll-item {
+  appearance: none;
+  position: relative;
+  display: grid;
+  place-content: center;
+  box-sizing: content-box;
+  border-radius: 9999px;
+  width: 100px;
+  flex: none;
+  aspect-ratio: 1/1;
+}
+
+.scroll-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.scroll-item.rounded {
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+[title="Neon Labs"] img {
+  scale: 1.2;
+}
+
+[title="MonkeDAO"] {
+  background: #184623;
+  aspect-ratio: 1 / 1;
+  object-fit: scale-down;
+}
+
+[title="MonkeDAO"] img {
+  padding: 2rem;
+}
+
+[title="Exchange.art"] {
+  overflow: hidden;
+}
+
+[title="Exchange.art"] img {
+  scale: 2;
+}
+
+[title="Openmeme"] img {
+  scale: 2.4;
+}
+
+.scroll-item:first-child {
+  margin-left: 2rem;
+}
+.scroll-item:last-child {
+  margin-right: 2rem;
+}
+
+@media (min-width: 475px) {
+  .scroll-container {
+    column-gap: 4rem;
+    height: 200px;
+  }
+  .scroll-item {
+    width: 140px;
+    filter: grayscale(1);
+  }
+  .scroll-item:hover {
+    filter: grayscale(0);
+  }
+}
+
+@keyframes scroller {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
