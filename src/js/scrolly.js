@@ -26,7 +26,7 @@ let marquee2 = document.querySelector(".marquee-2");
 function slowStop(controls, duration = 0.8) {
   animate(
     (progress) => {
-      controls.playbackRate = 1 - progress;
+      controls.playbackRate = Math.min(1 - progress, controls.playbackRate);
     },
     { duration }
   );
@@ -72,27 +72,27 @@ inView(scrollWrapper, () => {
   };
 });
 
-let isMobile = window.matchMedia("(any-pointer:coarse) and (max-width: 480px)").matches;
+let isMobile = window.matchMedia("(any-pointer:coarse) and (max-width: 495px)").matches;
 
-let startStoppingFn = debounce(() => {
-  console.log("restart");
-  slowStart(control1);
-}, 2000);
-
-let startX = 0;
+// let startX = 0;
 if (isMobile) {
-  function touchStart(event) {
-    slowStop(control1);
-    startX = event.touches[0].pageX;
-  }
-  function touchMove(event) {
-    let x = startX - event.touches[0].pageX;
-    console.log(x.toFixed(2));
-    control1.currentTime = boundedAdd(control1.currentTime, Math.round(x) / 8000, duration);
-  }
-  marquee1.addEventListener("touchstart", touchStart, false);
-  marquee1.addEventListener("touchmove", touchMove, false);
-  marquee1.addEventListener("touchend", startStoppingFn);
+  // let restartingFn = debounce(() => {
+  //   slowStart(control1);
+  // }, 3500);
+  // function touchStart(event) {
+  //   slowStop(control1);
+  //   startX = event.touches[0].pageX;
+  //   restartingFn();
+  // }
+  // function touchMove(event) {
+  //   let x = startX - event.touches[0].pageX;
+  //   // console.log((x / 5000).toFixed(3));
+  //   control1.currentTime = boundedAdd(control1.currentTime, x / 5000, duration);
+  //   restartingFn();
+  // }
+  // marquee1.addEventListener("touchstart", touchStart, false);
+  // marquee1.addEventListener("touchmove", touchMove, false);
+  // // marquee1.addEventListener("touchend", startStoppingFn);
 } else {
   marquee1.addEventListener("mouseenter", () => {
     slowStop(control1);
