@@ -31,6 +31,14 @@ body {
   color: var(--primary-color) !important;
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 /* Container */
 .container {
   margin: auto;
