@@ -234,3 +234,21 @@ body {
   border-width: min(10vw, 96px) 100vw 0 0;
   border-color: var(--primary-color) transparent transparent transparent;
 }
+
+@media (min-width: 769px) {
+  .large-screen {
+    display: initial;
+  }
+  .small-screen {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .large-screen {
+    display: none;
+  }
+  .small-screen {
+    display: initial;
+  }
+}

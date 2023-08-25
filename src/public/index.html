@@ -71,15 +71,34 @@
   <body id="home">
     <header id="main-header">
       <nav id="navbar">
-        <a href="javascript:void(0)" class="hamburger" aria-label="Show Menu"><i class="fa fa-bars"></i></a>
-        <ul>
+        <div>
+          <div class="logo-small">
+            <image height="100px" width="100px" src="images/blast/BlastCtrl_Icon_Vector_Red.svg" alt="" />
+            <h1 id="unexpanded-title">Blast<span class="text-primary">Ctrl</span></h1>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: flex-end">
+            <button aria-label="Theme Toggle" class="dark-mode-toggle small-screen">
+              <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+                <path
+                  fill="currentColor"
+                  d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"
+                />
+              </svg>
+            </button>
+
+            <button aria-expanded="false" aria-controls="navLinks" class="hamburger" aria-label="Show Navigation Menu">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <ul role="list" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Our Team</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a target="_blank" rel="noopener" href="https://tools.blastctrl.com">Tools</a></li>
-          <button aria-label="Theme Toggle" id="dark-mode-toggle" class="dark-mode-toggle">
+          <button aria-label="Theme Toggle" class="dark-mode-toggle large-screen">
             <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
               <path
                 fill="currentColor"
@@ -108,7 +127,7 @@
             </a>
             <div class="tagline">
               <h2>Be in control</h2>
-              <p>Take your blockchain project to the next level with us.</p>
+              <p>Take your blockchain project to the next level.</p>
               <!-- <a href="#about" class="btn btn-outline"
                 ><i class="fas fa-chevron-right"></i> Learn More</a
               > -->
