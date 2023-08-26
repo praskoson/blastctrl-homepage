@@ -246,6 +246,7 @@ svg {
 #about .card .meta p {
   margin: 0;
   font-weight: 300;
+  text-wrap: balance;
 }
 
 /* Team Members */
