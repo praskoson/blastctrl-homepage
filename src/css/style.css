@@ -19,6 +19,7 @@ body {
   line-height: 1.6;
   -webkit-tap-highlight-color: transparent;
   background-color: var(--background-color);
+  --top-button-margin: 16px;
 }
 
 ul {
@@ -524,6 +525,34 @@ p.privacy {
 
 .footer .social > * {
   margin: 0 15px;
+}
+
+/* Go to top button */
+.go-top-btn {
+  z-index: 10;
+  border: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12);
+  height: 42px;
+  width: 42px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 9999px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 18px;
+  margin-bottom: var(--top-button-margin);
+  transition: margin-bottom 0.2s ease;
+  cursor: pointer;
+  opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .go-top-btn {
+    margin-right: 8px;
+    height: 32px;
+    width: 32px;
+  }
 }
 
 @media screen and (max-width: 1124px) {

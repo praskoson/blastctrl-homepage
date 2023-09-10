@@ -5,3 +5,4 @@ require("./script.js");
 require("./theme.js");
 require("./captcha");
 require("./scrolly");
+require("./go-to-top");
